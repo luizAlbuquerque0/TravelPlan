@@ -9,7 +9,7 @@ namespace TravelPlan.Core.Repositories
 {
     public interface IUserRepository
     {
-        Task GetUserByEmailAndPasswordAsync(string email, string password);
+        Task<User> GetUserByEmailAndPasswordAsync(string email, string password);
         Task CreateUserAsync(User user);
         
         Task SaveChangesAsync();

@@ -25,8 +25,8 @@ namespace TravelPlan.Core.Entities
         public DateTime Arrival { get; private set; }
         public DateTime Departure { get; private set; }
         public int? DayBudget { get; private set; }
-        public decimal AmountSaved { get; private set; }
-        public decimal AmountWithdrawn { get; private set; }
+        public decimal AmountSaved { get; set; }
+        public decimal AmountWithdrawn { get; set; }
         public List<Atividade> Atividades { get; private set; }
         public int IdUser { get; private set; }
         public User User { get; set; }
