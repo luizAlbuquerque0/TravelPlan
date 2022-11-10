@@ -8,12 +8,13 @@ namespace TravelPlan.Core.Entities
 {
     public class User : BaseEntity
     {
-        public User(string name, string email)
+        public User(string name, string email, string password)
         {
             Name = name;
             Email = email;
             CreatedAt = DateTime.Now;
             Viagens = new List<Viagem>();
+            Password = password;
         }
 
         public string Name { get; private set; }
