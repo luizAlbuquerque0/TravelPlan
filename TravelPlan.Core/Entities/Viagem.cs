@@ -8,7 +8,7 @@ namespace TravelPlan.Core.Entities
 {
     public class Viagem : BaseEntity
     {
-        public Viagem(string description, string destiny, DateTime arrival, DateTime departure)
+        public Viagem(string description, string destiny, DateTime arrival, DateTime departure, int idUser)
         {
             Description = description;
             Destiny = destiny;
@@ -17,6 +17,7 @@ namespace TravelPlan.Core.Entities
             AmountWithdrawn = 0;
             AmountSaved = 0;
             Atividades = new List<Atividade>();
+            IdUser = idUser;
         }
 
         public string Description { get; private set; }
@@ -27,6 +28,8 @@ namespace TravelPlan.Core.Entities
         public decimal AmountSaved { get; private set; }
         public decimal AmountWithdrawn { get; private set; }
         public List<Atividade> Atividades { get; private set; }
+        public int IdUser { get; private set; }
+        public User User { get; set; }
 
         public void AddDayBudget(int dayBudget)
         {

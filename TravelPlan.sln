@@ -5,7 +5,12 @@ VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TravelPlan.API", "TravelPlan.API\TravelPlan.API.csproj", "{DA73F376-8726-4519-B4DE-62A12A515C1E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelPlan.Core", "TravelPlan.Core\TravelPlan.Core.csproj", "{62ADDA75-7B12-4009-A676-755AC9AC9733}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TravelPlan.Core", "TravelPlan.Core\TravelPlan.Core.csproj", "{62ADDA75-7B12-4009-A676-755AC9AC9733}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelPlan.Infrastructure", "TravelPlan.Infrastructure\TravelPlan.Infrastructure.csproj", "{0B19DBCA-7302-49B8-8B18-E92B5C7DAD48}"
+	ProjectSection(ProjectDependencies) = postProject
+		{62ADDA75-7B12-4009-A676-755AC9AC9733} = {62ADDA75-7B12-4009-A676-755AC9AC9733}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +26,10 @@ Global
 		{62ADDA75-7B12-4009-A676-755AC9AC9733}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62ADDA75-7B12-4009-A676-755AC9AC9733}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62ADDA75-7B12-4009-A676-755AC9AC9733}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B19DBCA-7302-49B8-8B18-E92B5C7DAD48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B19DBCA-7302-49B8-8B18-E92B5C7DAD48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B19DBCA-7302-49B8-8B18-E92B5C7DAD48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B19DBCA-7302-49B8-8B18-E92B5C7DAD48}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
