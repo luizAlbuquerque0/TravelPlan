@@ -46,16 +46,10 @@ namespace TravelPlan.Infrastructure.Persistence.Repositories
             throw new NotImplementedException();
         }
 
-        public async Task<List<Atividade>> GetAllAtividadesByViagem(int id)
+        public async Task<List<Atividade>> GetAllAtividadesByDate(int idViagem, int date)
         {
-            var atividades = await _dbContext.Atividades.Where(a => a.IdViagem == id).ToListAsync();
-            if (atividades == null) return null;
+            var atividades = await _dbContext.Atividades.Where(v => v.IdViagem == idViagem && v.Date == date).ToListAsync();
             return atividades;
-        }
-
-        public async Task<Atividade> GetAtividadeByIdAsync(int id)
-        {
-            return await _dbContext.Atividades.SingleOrDefaultAsync(a => a.Id == id);
         }
 
         public async Task<List<Viagem>> GetUserViagensAsync(int id)

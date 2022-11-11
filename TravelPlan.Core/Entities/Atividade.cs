@@ -8,7 +8,7 @@ namespace TravelPlan.Core.Entities
 {
     public class Atividade : BaseEntity
     {
-        public Atividade(string description, int startTime, int endtime, DateTime date, int idViagem)
+        public Atividade(string description, int startTime, int endtime, int date, int idViagem)
         {
             Description = description;
             StartTime = startTime;
@@ -20,7 +20,7 @@ namespace TravelPlan.Core.Entities
         public string Description { get; private set; }
         public int StartTime { get; private set; }
         public int Endtime { get; private set; }
-        public DateTime Date { get; private set; }
+        public int Date { get; private set; }
         public int IdViagem { get; private set; }
         public Viagem Viagem { get; private set; }
     }
