@@ -41,11 +41,6 @@ namespace TravelPlan.Infrastructure.Persistence.Repositories
             
         }
 
-        public Task DeleteAtividadeByIdAsync(int id)
-        {
-            throw new NotImplementedException();
-        }
-
         public async Task<List<Atividade>> GetAllAtividadesByDate(int idViagem, int date)
         {
             var atividades = await _dbContext.Atividades.Where(v => v.IdViagem == idViagem && v.Date == date).ToListAsync();
@@ -69,9 +64,11 @@ namespace TravelPlan.Infrastructure.Persistence.Repositories
             await _dbContext.SaveChangesAsync();
         }
 
-        public Task UpdateAtividadeAsync(Atividade atividade)
+        public async Task UpdateAtividadeAsync(int idViagem, int idAtividade, string Description)
         {
-            throw new NotImplementedException();
+            var atividade = await _dbContext.Atividades.SingleOrDefaultAsync(a => a.Id == idAtividade);
+            atividade.ChandeDescription(Description);
+
         }
 
         public async Task WithdrawnAsync(int id, decimal amount)

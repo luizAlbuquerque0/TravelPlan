@@ -23,5 +23,10 @@ namespace TravelPlan.Core.Entities
         public int Date { get; private set; }
         public int IdViagem { get; private set; }
         public Viagem Viagem { get; private set; }
+
+        public void ChandeDescription(string description)
+        {
+            Description = description;
+        }
     }
 }
