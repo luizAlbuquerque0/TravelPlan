@@ -4,6 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TravelPlan.API", "TravelPlan.API\TravelPlan.API.csproj", "{DA73F376-8726-4519-B4DE-62A12A515C1E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0B19DBCA-7302-49B8-8B18-E92B5C7DAD48} = {0B19DBCA-7302-49B8-8B18-E92B5C7DAD48}
+		{62ADDA75-7B12-4009-A676-755AC9AC9733} = {62ADDA75-7B12-4009-A676-755AC9AC9733}
+		{936D2759-0046-4728-A81D-B84FA5076D69} = {936D2759-0046-4728-A81D-B84FA5076D69}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TravelPlan.Core", "TravelPlan.Core\TravelPlan.Core.csproj", "{62ADDA75-7B12-4009-A676-755AC9AC9733}"
 EndProject
@@ -12,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TravelPlan.Infrastructure",
 		{62ADDA75-7B12-4009-A676-755AC9AC9733} = {62ADDA75-7B12-4009-A676-755AC9AC9733}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelPlan.Application", "TravelPlan.Application\TravelPlan.Application.csproj", "{936D2759-0046-4728-A81D-B84FA5076D69}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TravelPlan.Application", "TravelPlan.Application\TravelPlan.Application.csproj", "{936D2759-0046-4728-A81D-B84FA5076D69}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
