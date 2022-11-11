@@ -13,8 +13,8 @@ namespace TravelPlan.Core.Repositories
         Task<List<Viagem>> GetUserViagensAsync(int id);
         Task<Viagem> GetViagemByIdAsync(int id);
         Task AddDayBudgetAsync(int id, int budget);
-        Task WithdrawnAsync(int id, int amount);
-        Task AddSavedMoneyAsync(int id, int amount);
+        Task WithdrawnAsync(int id, decimal amount);
+        Task AddSavedMoneyAsync(int id, decimal amount);
         Task AddAtividadesAsync(Atividade atividade);
         Task<List<Atividade>> GetAllAtividadesByViagem(int id);
         Task<Atividade> GetAtividadeByIdAsync(int id);

@@ -28,7 +28,7 @@ namespace TravelPlan.Infrastructure.Persistence.Repositories
             _dbContext.SaveChangesAsync();
         }
 
-        public async Task AddSavedMoneyAsync(int id, int amount)
+        public async Task AddSavedMoneyAsync(int id, decimal amount)
         {
             
             var viagem = await _dbContext.Viagens.SingleOrDefaultAsync(v => v.Id == id);
@@ -38,6 +38,7 @@ namespace TravelPlan.Infrastructure.Persistence.Repositories
         public async Task CreateViagemAsync(Viagem viagem)
         {
             await _dbContext.Viagens.AddAsync(viagem);
+            
         }
 
         public Task DeleteAtividadeByIdAsync(int id)
@@ -79,7 +80,7 @@ namespace TravelPlan.Infrastructure.Persistence.Repositories
             throw new NotImplementedException();
         }
 
-        public async Task WithdrawnAsync(int id, int amount)
+        public async Task WithdrawnAsync(int id, decimal amount)
         {
             var viagem = await _dbContext.Viagens.SingleOrDefaultAsync(v => v.Id == id);
             if (amount > viagem.AmountSaved) return;
