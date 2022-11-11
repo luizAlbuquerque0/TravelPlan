@@ -18,13 +18,14 @@ namespace TravelPlan.Core.Entities
             AmountSaved = 0;
             Atividades = new List<Atividade>();
             IdUser = idUser;
+            DayBudget = 0;
         }
 
         public string Description { get; private set; }
         public string Destiny { get; private set; }
         public int Arrival { get; private set; }
         public int Departure { get; private set; }
-        public int? DayBudget { get; private set; }
+        public int DayBudget { get; private set; }
         public decimal AmountSaved { get; set; }
         public decimal AmountWithdrawn { get; set; }
         public List<Atividade> Atividades { get; private set; }
