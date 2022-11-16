@@ -9,8 +9,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-var connectionString = builder.Configuration.GetConnectionString("TravelPlanCs");
-builder.Services.AddDbContext<TravelPlanDbContext>(options => options.UseSqlServer(connectionString));
+var conectionString = builder.Configuration.GetConnectionString("TravelPlanCs");
+builder.Services.AddDbContext<TravelPlanDbContext>(options => options.UseSqlServer(conectionString));
 
 builder.Services.AddMediatR(typeof(CreateViagemCommand));
 builder.Services.AddScoped<IUserRepository, UserRepository>();

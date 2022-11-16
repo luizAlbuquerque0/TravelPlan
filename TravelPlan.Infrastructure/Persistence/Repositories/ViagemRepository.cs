@@ -14,7 +14,7 @@ namespace TravelPlan.Infrastructure.Persistence.Repositories
         private readonly TravelPlanDbContext _dbContext;
         public ViagemRepository(TravelPlanDbContext dbContext)
         {
-            dbContext = _dbContext;
+            _dbContext = dbContext;
         }
         public async Task AddAtividadesAsync(Atividade atividade)
         {
@@ -25,7 +25,7 @@ namespace TravelPlan.Infrastructure.Persistence.Repositories
         {
             var viagem = await _dbContext.Viagens.SingleOrDefaultAsync(v => v.Id == id);
             viagem.AddDayBudget(budget);
-            _dbContext.SaveChangesAsync();
+            await _dbContext.SaveChangesAsync();
         }
 
         public async Task AddSavedMoneyAsync(int id, decimal amount)

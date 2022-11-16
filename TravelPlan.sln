@@ -18,6 +18,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TravelPlan.Infrastructure",
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TravelPlan.Application", "TravelPlan.Application\TravelPlan.Application.csproj", "{936D2759-0046-4728-A81D-B84FA5076D69}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0B19DBCA-7302-49B8-8B18-E92B5C7DAD48} = {0B19DBCA-7302-49B8-8B18-E92B5C7DAD48}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
