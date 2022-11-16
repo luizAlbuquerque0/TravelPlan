@@ -12,8 +12,8 @@ using TravelPlan.Infrastructure.Persistence;
 namespace TravelPlan.Infrastructure.Persistence.Migrations
 {
     [DbContext(typeof(TravelPlanDbContext))]
-    [Migration("20221116151659_InitialMigrations")]
-    partial class InitialMigrations
+    [Migration("20221116224927_InitialMigration")]
+    partial class InitialMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
