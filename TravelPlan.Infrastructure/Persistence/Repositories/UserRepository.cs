@@ -25,6 +25,13 @@ namespace TravelPlan.Infrastructure.Persistence.Repositories
             return await _dbContext.Users.SingleOrDefaultAsync(u => u.Email == email && u.Password == password);
         }
 
+        public async Task<User> GetUserByIdAsync(int id)
+        {
+            var user = await _dbContext.Users.SingleOrDefaultAsync(u => u.Id == id);
+            if (user == null) return null;
+            return user;
+        }
+
         public async Task SaveChangesAsync()
         {
             await _dbContext.SaveChangesAsync();

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using TravelPlan.Application.Commands.CreateUser;
 using TravelPlan.Application.Commands.LoginUser;
+using TravelPlan.Application.Queries.GetUserById;
 
 namespace TravelPlan.API.Controllers
 {
@@ -13,11 +14,21 @@ namespace TravelPlan.API.Controllers
         {
             _mediator = mediator;
         }
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(int id)
+        {
+            var query = new GetUserByIdQuery(id);
+            var userViewModel = await _mediator.Send(query);
+            if (userViewModel == null) return NotFound();
+
+            return Ok(userViewModel);
+        }
+
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] CreateUserCommand command)
         {
             var id = await _mediator.Send(command);
-            return CreatedAtAction(nameof(Login), new { id = id }, command);
+            return CreatedAtAction(nameof(GetById), new { id = id }, command);
         }
 
         [HttpPut("login")]
