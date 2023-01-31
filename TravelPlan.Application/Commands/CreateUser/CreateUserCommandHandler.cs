@@ -21,6 +21,7 @@ namespace TravelPlan.Application.Commands.CreateUser
 
             var user = new User(request.Name, request.Email, passwordHash);
             await _userRepository.CreateUserAsync(user);
+            await _userRepository.SaveChangesAsync();
             return user.Id;
         }
     }

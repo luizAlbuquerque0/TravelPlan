@@ -16,6 +16,7 @@ namespace TravelPlan.Application.Commands.CreateViagem
         {
             var viagem = new Viagem(request.Description, request.Destiny, request.Arrival,request.Departure, request.IdUser);
             await _viagemRepository.CreateViagemAsync(viagem);
+            await _viagemRepository.SaveChangesAsync();
 
             return new ViagemDetailsViewModel(viagem.Destiny, viagem.Description, viagem.Departure, viagem.Arrival, viagem.DayBudget, viagem.AmountSaved, viagem.AmountSaved);
         }
