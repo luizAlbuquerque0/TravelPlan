@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using TravelPlan.Application.Commands.AddActivitie;
 using TravelPlan.Application.Commands.UpdateAtividade;
@@ -7,6 +8,7 @@ using TravelPlan.Application.Queries.GetAtividadeByDate;
 namespace TravelPlan.API.Controllers
 {
     [Route("api/activities")]
+    [Authorize]
     public class ActivitiesControllers : ControllerBase
     {
         private readonly IMediator _mediator;

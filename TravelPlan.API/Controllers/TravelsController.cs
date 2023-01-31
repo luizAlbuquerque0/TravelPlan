@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using TravelPlan.Application.Commands.AddDayBudget;
 using TravelPlan.Application.Commands.AddSavedMoney;
@@ -11,6 +12,7 @@ using TravelPlan.Application.Queries.GetViagemById;
 namespace TravelPlan.API.Controllers
 {
     [Route("api/travels")]
+    [Authorize]
     public class TravelsController : ControllerBase
     {
         private readonly IMediator _mediator;
