@@ -16,7 +16,7 @@ namespace TravelPlan.Infrastructure.Persistence.Repositories
         {
             _dbContext = dbContext;
         }
-        public async Task AddAtividadesAsync(Atividade atividade)
+        public async Task AddActivitieAsync(Atividade atividade)
         {
             await _dbContext.Atividades.AddAsync(atividade);
         }

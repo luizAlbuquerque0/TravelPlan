@@ -15,7 +15,7 @@ namespace TravelPlan.Core.Repositories
         Task AddDayBudgetAsync(int id, int budget);
         Task WithdrawnAsync(int id, decimal amount);
         Task AddSavedMoneyAsync(int id, decimal amount);
-        Task AddAtividadesAsync(Atividade atividade);
+        Task AddActivitieAsync(Atividade atividade);
         Task<List<Atividade>> GetAllAtividadesByDate(int idViagem, int date);
         Task UpdateAtividadeAsync(int idViagem, int idAtividade, string Description);
         Task SaveChangesAsync();
