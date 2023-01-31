@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -50,6 +51,7 @@ namespace TravelPlan.Infrastructure.Persistence.Repositories
         public async Task<List<Atividade>> GetAllAtividadesByDate(int idViagem, int date)
         {
             var atividades = await _dbContext.Atividades.Where(v => v.IdViagem == idViagem && v.Date == date).ToListAsync();
+            if (atividades == null) return null;
             return atividades;
         }
 
@@ -62,7 +64,9 @@ namespace TravelPlan.Infrastructure.Persistence.Repositories
 
         public async Task<Viagem> GetViagemByIdAsync(int id)
         {
-            return await _dbContext.Viagens.SingleOrDefaultAsync(v => v.Id == id);
+            var viagem = await _dbContext.Viagens.SingleOrDefaultAsync(v => v.Id == id);
+            if (viagem == null) return null;
+            return viagem;
         }
 
         public async Task SaveChangesAsync()

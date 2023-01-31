@@ -22,7 +22,10 @@ namespace TravelPlan.Infrastructure.Persistence.Repositories
 
         public async Task<User> GetUserByEmailAndPasswordAsync(string email, string password)
         {
-            return await _dbContext.Users.SingleOrDefaultAsync(u => u.Email == email && u.Password == password);
+            var user =  await _dbContext.Users.SingleOrDefaultAsync(u => u.Email == email && u.Password == password);
+            if (user == null) return null;
+
+            return user;
         }
 
         public async Task<User> GetUserByIdAsync(int id)
