@@ -18,6 +18,7 @@ namespace TravelPlan.Core.Repositories
         Task AddActivitieAsync(Atividade atividade);
         Task<List<Atividade>> GetAllAtividadesByDate(int idViagem, int date);
         Task UpdateAtividadeAsync(int idViagem, int idAtividade, string Description);
+        Task DeleteTravelAsync(int travelId);
         Task SaveChangesAsync();
     }
 }

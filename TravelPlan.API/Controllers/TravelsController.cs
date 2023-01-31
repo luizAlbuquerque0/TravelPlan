@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using TravelPlan.Application.Commands.AddDayBudget;
 using TravelPlan.Application.Commands.AddSavedMoney;
 using TravelPlan.Application.Commands.CreateViagem;
+using TravelPlan.Application.Commands.DeleteTravel;
 using TravelPlan.Application.Commands.Withdrawn;
 using TravelPlan.Application.Queries.GetUserViagens;
 using TravelPlan.Application.Queries.GetViagemById;
@@ -34,6 +35,14 @@ namespace TravelPlan.API.Controllers
 
             return CreatedAtAction(nameof(GetById), new { travel = travel }, command);
         }
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteTravel(int id)
+        {
+            var command = new DeleteTravelCommand(id);
+            await _mediator.Send(command);
+
+            return NoContent();
+        }
 
         [HttpGet("users/{id}")]
         public async Task<IActionResult> GetAllUserTravelsById(int id)
@@ -51,21 +60,21 @@ namespace TravelPlan.API.Controllers
         {
             await _mediator.Send(command);
 
-            return Ok();
+            return NoContent();
         }
         [HttpPost("save")]
         public async Task<IActionResult> AddSavedMoney([FromBody] AddSavedMoneyCommand command)
         {
             await _mediator.Send(command);
 
-            return Ok();
+            return NoContent();
         }
         [HttpPost("withdrawn")]
         public async Task<IActionResult> WithDrawnMoney([FromBody] WithdrawnCommand command)
         {
             await _mediator.Send(command);
 
-            return Ok();
+            return NoContent();
         }
     }
 }

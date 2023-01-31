@@ -41,6 +41,12 @@ namespace TravelPlan.Infrastructure.Persistence.Repositories
             
         }
 
+        public async Task DeleteTravelAsync(int travelId)
+        {
+            var travel = await _dbContext.Viagens.SingleOrDefaultAsync(v => v.Id == travelId);
+            _dbContext.Viagens.Remove(travel);
+        }
+
         public async Task<List<Atividade>> GetAllAtividadesByDate(int idViagem, int date)
         {
             var atividades = await _dbContext.Atividades.Where(v => v.IdViagem == idViagem && v.Date == date).ToListAsync();

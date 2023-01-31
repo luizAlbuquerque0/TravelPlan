@@ -26,13 +26,13 @@ namespace TravelPlan.API.Controllers
         public async Task<IActionResult> AddActivitie([FromBody] AddActivitieCommand command)
         {
             await _mediator.Send(command);
-            return Ok();
+            return NoContent();
         }
         [HttpPut]
         public async Task<IActionResult> UpdateActivitie([FromBody] UpdateAtividadeCommand command)
         {
             await _mediator.Send(command);
-            return Ok();
+            return NoContent();
         }
     }
 }
