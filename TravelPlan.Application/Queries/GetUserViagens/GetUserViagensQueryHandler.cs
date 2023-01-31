@@ -19,7 +19,7 @@ namespace TravelPlan.Application.Queries.GetUserViagens
         public async Task<List<ViagensViewModel>> Handle(GetUserViagensQuery request, CancellationToken cancellationToken)
         {
             var viagens = await _viagemRepository.GetUserViagensAsync(request.Id);
-            var viagensViewModel = viagens.Select(v => new ViagensViewModel(v.Destiny, v.Description, v.Departure)).ToList();
+            var viagensViewModel = viagens.Select(v => new ViagensViewModel(v.Id,v.Destiny, v.Description, v.Departure)).ToList();
 
             return viagensViewModel;
         }
