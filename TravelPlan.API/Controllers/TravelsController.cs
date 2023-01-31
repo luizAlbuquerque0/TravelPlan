@@ -33,9 +33,9 @@ namespace TravelPlan.API.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateTravel([FromBody] CreateViagemCommand command)
         {
-            var travel = await _mediator.Send(command);
+            var id = await _mediator.Send(command);
 
-            return CreatedAtAction(nameof(GetById), new { travel = travel }, command);
+            return CreatedAtAction(nameof(GetById), new { id = id }, command);
         }
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteTravel(int id)

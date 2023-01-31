@@ -1,14 +1,8 @@
 ﻿using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TravelPlan.Application.ViewModels;
 
 namespace TravelPlan.Application.Commands.CreateViagem
 {
-    public class CreateViagemCommand : IRequest<ViagemDetailsViewModel>
+    public class CreateViagemCommand : IRequest<int>
     {
         public string Destiny { get; set; }
         public string Description { get; set; }
