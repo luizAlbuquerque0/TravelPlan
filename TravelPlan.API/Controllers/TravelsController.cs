@@ -40,8 +40,9 @@ namespace TravelPlan.API.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteTravel(int id)
         {
-            var command = new DeleteTravelCommand(id);
-            await _mediator.Send(command);
+           
+                var command = new DeleteTravelCommand(id);
+                await _mediator.Send(command);
 
             return NoContent();
         }

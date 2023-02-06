@@ -1,3 +1,4 @@
+using FluentValidation.AspNetCore;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -5,6 +6,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
 using TravelPlan.Application.Commands.CreateViagem;
+using TravelPlan.Application.Validators;
 using TravelPlan.Core.Repositories;
 using TravelPlan.Core.Services;
 using TravelPlan.Infrastructure.AuthService;
@@ -24,6 +26,8 @@ builder.Services.AddMediatR(typeof(CreateViagemCommand));
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IViagemRepository, ViagemRepository>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddControllers()
+    .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreateUserCommandValidator>());
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
