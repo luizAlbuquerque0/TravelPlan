@@ -5,7 +5,13 @@ namespace TravelPlan.Application.Queries.GetAtividadeByDate
 {
     public class GetAtividadeByDateQuery : IRequest<List<AtividadeViewModel>>
     {
-        public int IdViagem { get; set; }
-        public int Date { get; set; }
+        public GetAtividadeByDateQuery(int idViagem, int date)
+        {
+            IdViagem = idViagem;
+            Date = date;
+        }
+
+        public int IdViagem { get; private set; }
+        public int Date { get; private set; }
     }
 }

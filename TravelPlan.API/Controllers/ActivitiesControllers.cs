@@ -16,9 +16,10 @@ namespace TravelPlan.API.Controllers
         {
             _mediator = mediator;
         }
-        [HttpGet]
-        public async Task<IActionResult> GetActivitiesByDate([FromBody] GetAtividadeByDateQuery query)
+        [HttpGet("{id}/{date}")]
+        public async Task<IActionResult> GetActivitiesByDate(int id, int date)
         {
+            var query = new GetAtividadeByDateQuery(id, date);
             var activities = await _mediator.Send(query);
             if (activities == null) return NotFound();
 
