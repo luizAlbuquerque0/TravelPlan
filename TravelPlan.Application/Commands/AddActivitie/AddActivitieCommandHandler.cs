@@ -15,6 +15,7 @@ namespace TravelPlan.Application.Commands.AddActivitie
         {
             var activitie = new Atividade(request.Description, request.StatTime, request.EndTime, request.Date, request.TravelId);
             await _viagemRepository.AddActivitieAsync(activitie);
+            await _viagemRepository.SaveChangesAsync();
 
             return Unit.Value;
         }
