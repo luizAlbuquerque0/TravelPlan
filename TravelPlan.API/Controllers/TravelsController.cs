@@ -58,21 +58,21 @@ namespace TravelPlan.API.Controllers
             return Ok(travels);
         }
 
-        [HttpPost("budget")]
+        [HttpPut("budget")]
         public async Task<IActionResult> AddDayBudget([FromBody] AddDayBudgetCommand command)
         {
             await _mediator.Send(command);
 
             return NoContent();
         }
-        [HttpPost("save")]
+        [HttpPut("save")]
         public async Task<IActionResult> AddSavedMoney([FromBody] AddSavedMoneyCommand command)
         {
             await _mediator.Send(command);
 
             return NoContent();
         }
-        [HttpPost("withdrawn")]
+        [HttpPut("withdrawn")]
         public async Task<IActionResult> WithDrawnMoney([FromBody] WithdrawnCommand command)
         {
             await _mediator.Send(command);
