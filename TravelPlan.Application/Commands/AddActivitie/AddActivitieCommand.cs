@@ -2,7 +2,7 @@
 
 namespace TravelPlan.Application.Commands.AddActivitie
 {
-    public class AddActivitieCommand : IRequest<Unit>
+    public class AddActivitieCommand : IRequest<int>
     {
         public int TravelId { get;  set; }
         public string Description { get;  set; }

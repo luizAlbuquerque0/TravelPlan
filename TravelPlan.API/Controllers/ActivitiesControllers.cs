@@ -28,8 +28,8 @@ namespace TravelPlan.API.Controllers
         [HttpPost]
         public async Task<IActionResult> AddActivitie([FromBody] AddActivitieCommand command)
         {
-            await _mediator.Send(command);
-            return NoContent();
+            var id = await _mediator.Send(command);
+            return CreatedAtAction(nameof(GetActivitiesByDate), new {id = id}, command);
         }
         [HttpPut]
         public async Task<IActionResult> UpdateActivitie([FromBody] UpdateAtividadeCommand command)
